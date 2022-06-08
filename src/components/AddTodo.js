@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { connect } from "react-redux";
-import { addTodo } from "../slices/todoSlice";
+import { saveTodo } from "../slices/todoSlice";
 
 function AddTodo(props) {
   const [todo, setTodo] = useState('');
@@ -10,7 +10,7 @@ function AddTodo(props) {
   }
 
   const addCurrentTodo = () => {
-    props.dispatch(addTodo({label: todo, id: Date.now()}));
+    props.dispatch(saveTodo({label: todo, id: Date.now()}));
     setTodo('');
   }
   return (

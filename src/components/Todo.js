@@ -1,6 +1,13 @@
+import { useEffect } from "react";
 import { connect } from "react-redux";
+import { fetchTodos } from "../slices/todoSlice";
 
 function Todo(props) {
+
+  useEffect(() => {
+    props.dispatch(fetchTodos());
+  }, []);
+
   return (
     <>
       {props.todos.map((todo) => (
